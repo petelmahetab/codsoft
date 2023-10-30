@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Currency_converter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the amount in INR
+        System.out.println("Welcome to Currency Converter Calculator INR to");
+        System.out.print("Enter amount in INR: ");
+        double inrAmount = scanner.nextDouble();
+
+        // Conversion rates (as of the time of writing; replace with current rates)
+        double usdRate = 0.012;   // 1 INR = 0.012 USD
+        double gbpRate = 0.0099;   // 1 INR = 0.0099 GBP
+        double cadRate = 0.017;   // 1 INR = 0.017 CAD
+        double aedRate = 0.044;   // 1 INR = 0.044 AED
+        double kwdRate = 0.0037;   // 1 INR = 0.0037 KWD
+
+        // Display 
+        System.out.println("Choose Which Currency you want to Convert :");
+        System.out.println("1. USD (U.S.Dollar)\n");
+        System.out.println("2. GBP (British Pound)\n");
+        System.out.println("3. CAD (Canadian Dollar)\n");
+        System.out.println("4. AED (United Arab)\n");
+        System.out.println("5. KWD (Kuwait Dinnar)\n");
+
+        // Get user choice
+        System.out.print("Enter choice (1-5): ");
+        int choice = scanner.nextInt();
+
+        // Convert to the selected currency using switch-case
+        double convertedAmount = 0;
+        switch (choice) {
+            case 1:
+                convertedAmount = inrAmount * usdRate;
+                System.out.println("Converted amount in USD: " + convertedAmount+ " $");
+                break;
+            case 2:
+                convertedAmount = inrAmount * gbpRate;
+                System.out.println("Converted amount in GBP: " + convertedAmount+ " £");
+                break;
+            case 3:
+                convertedAmount = inrAmount * cadRate;
+                System.out.println("Converted amount in CAD: " + convertedAmount+ " C$");
+                break;
+            case 4:
+                convertedAmount = inrAmount * aedRate;
+                System.out.println("Converted amount in AED: " + convertedAmount+ " Dirham");
+                break;
+            case 5:
+                convertedAmount = inrAmount * kwdRate;
+                System.out.println("Converted amount in KWD: " + convertedAmount+" Kuwait Dinnar");
+                break;
+            default:
+                System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+        }
+
+        // No need to close the scanner explicitly
+    }
+}
+
